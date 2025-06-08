@@ -27,6 +27,7 @@ body {
 }
 
 .user-card {
+  gap: 8px;
   display: flex;
   flex-direction: column;
   border: 1px solid #333;
