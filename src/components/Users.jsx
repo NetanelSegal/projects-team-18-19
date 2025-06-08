@@ -89,13 +89,15 @@ const users = [
 
 export default function Users() {
   return (
-    <div>
+    <section className='users-section'>
       <h2>Users</h2>
-      <User
-        username={'Modhe'}
-        email='modhe@me.com'
-        avatar='https://reqres.in/img/faces/1-image.jpg'
-      />
-    </div>
+      <div className='users-container'>
+        <User
+          username={'Modhe'}
+          email='modhe@me.com'
+          avatar='https://reqres.in/img/faces/1-image.jpg'
+        />
+      </div>
+    </section>
   );
 }
