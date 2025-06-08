@@ -18,12 +18,34 @@ body {
 .users-section {
   padding: 10px;
   text-align: center;
+  h2 {
+    margin-block: 10px;
+  }
+
+  main {
+    display: flex;
+  }
 }
 
 .users-container {
+  flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.users-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
 }
 
 .user-card {
@@ -43,18 +65,18 @@ body {
     object-fit: cover;
     border-radius: 12px;
   }
+}
 
-  button {
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 
-    &:hover {
-      background-color: #555;
-      scale: 1.05;
-    }
+  &:hover {
+    background-color: #555;
+    scale: 1.05;
   }
 }
