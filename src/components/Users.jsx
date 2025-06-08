@@ -88,19 +88,19 @@ const users = [
 ];
 
 export default function Users() {
-  const compArr = users.map((user) => (
-    <User
-      key={user.id}
-      username={user.first_name + ' ' + user.last_name}
-      email={user.email}
-      avatar={user.avatar}
-    />
-  ));
-
   return (
     <section className='users-section'>
       <h2>Users</h2>
-      <div className='users-container'>{compArr}</div>
+      <div className='users-container'>
+        {users.map((user) => (
+          <User
+            key={user.id}
+            username={user.first_name + ' ' + user.last_name}
+            email={user.email}
+            avatar={user.avatar}
+          />
+        ))}
+      </div>
     </section>
   );
 }
