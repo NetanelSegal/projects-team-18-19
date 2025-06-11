@@ -1,6 +1,8 @@
+import UserForm from './UserForm';
 import User from './User';
+import { useState } from 'react';
 
-const users = [
+const usersData = [
   {
     id: 1,
     email: 'george.bluth@reqres.in',
@@ -88,45 +90,24 @@ const users = [
 ];
 
 export default function Users() {
+  const [users, setUsers] = useState(usersData);
+
   return (
     <section className='users-section'>
       <h2>Users</h2>
       <main>
         <div className='users-container'>
-          {users.map((user) => (
+          {users.map((user, i) => (
             <User
               key={user.id}
               username={user.first_name + ' ' + user.last_name}
               email={user.email}
               avatar={user.avatar}
+              index={i}
             />
           ))}
         </div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            console.log('Submited', e);
-          }}
-          className='users-form'
-        >
-          <div>
-            <label htmlFor='email'>email</label>
-            <input id='email' type='text' />
-          </div>
-          <div>
-            <label htmlFor='first_name'>first_name</label>
-            <input id='first_name' type='text' />
-          </div>
-          <div>
-            <label htmlFor='last_name'>last_name</label>
-            <input id='last_name' type='text' />
-          </div>
-          <div>
-            <label htmlFor='avatar'>avatar</label>
-            <input id='avatar' type='text' />
-          </div>
-          <button type='submit'>Add</button>
-        </form>
+        <UserForm setUsers={setUsers} />
       </main>
     </section>
   );
